@@ -28,22 +28,36 @@ int main()
 	
 		printf("\nDigite o coeficiente c: ");
 		scanf("%f", &c);
-		d= pow(b,2.0)-4*a*c;		
-		d= sqrt(d);	
 		
-		
-		if (d<0)
+		if (b==0&&c==0)
 		{
-			printf("\nPor o delta ser menor do que zero, a equação não possui solução real");
-			
+			printf("\nA raíz desta equação é: 0");
+		}
+		
+		else{
+		
+			d= pow(b,2.0)-4*a*c;		
+			d= sqrt(d);	
+		
+			if (d==0){
+				
+				x1 = (-b+d)/(2*a);
+				printf("\nO valor da raiz é de %f", x1);
 			}
-			else
+			else if (d<0)
 			{
-				x1= (-b+d)/2*a;
-				printf("\nO valor de uma das raizes é de %f", x1);
-				x2= (-b-d)/2*a;
-				printf("\nO valor da segunda raiz é de %f", x2);
+				printf("\nO delta é menor do que zero, a equação não possui solução real");
+			
+				}
+			else
+				{
+					x1= (-b+d)/(2*a);
+					printf("\nO valor de uma raiz é de %f", x1);
+					x2= (-b-d)/(2*a);
+					printf("\nO valor da segunda raiz é de %f", x2);
+				}
+			}
 				
 			return 0;
 			}
-			}
+			
